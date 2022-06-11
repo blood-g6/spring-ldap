@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <title>Home</title>
+</head>
+
+<body>
+    <div>
+        <!-- ログインユーザーの氏名(cn)を表示する -->
+        <h1>Hello <span sec:authentication="principal.cn[0]">User</span> !</h1>
+    </div>
+
+    <form th:action="@{/logout}" method="post">
+        <button>Logout</button>
+    </form>
+</body>
+
+</html>
